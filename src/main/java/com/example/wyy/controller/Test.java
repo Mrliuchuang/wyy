@@ -56,7 +56,7 @@ public class Test  extends EnterJdbcTemplate {
         EasyExcel.write(response.getOutputStream(), getMaterialInfoByCityOrHospitalBean.class).sheet("模版1").doWrite(getMatInfo());
         //EasyExcel.write(filename, MatBean.class).sheet("学生列表").doWrite(getMatInfo());
     }
-    @RequestMapping("/excel1_newbranch")
+    @RequestMapping("/excel1_newbranchmastmast")
     @ResponseBody
     public void getMaterialInfoByCityOrHospital1(HttpServletResponse response) throws Exception {
         response.setContentType("application/vnd.ms-excel");
