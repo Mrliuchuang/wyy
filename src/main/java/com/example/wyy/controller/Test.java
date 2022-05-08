@@ -56,4 +56,16 @@ public class Test  extends EnterJdbcTemplate {
         EasyExcel.write(response.getOutputStream(), getMaterialInfoByCityOrHospitalBean.class).sheet("模版1").doWrite(getMatInfo());
         //EasyExcel.write(filename, MatBean.class).sheet("学生列表").doWrite(getMatInfo());
     }
+    @RequestMapping("/excel1_newbranch")
+    @ResponseBody
+    public void getMaterialInfoByCityOrHospital1(HttpServletResponse response) throws Exception {
+        response.setContentType("application/vnd.ms-excel");
+        response.setCharacterEncoding("utf-8");
+        String fileName = "excel测试";
+        response.setHeader("Content-disposition", "attachment;filename=" + fileName + ".xlsx");
+        //单个sheet 浏览器下载
+        //EasyExcel.write(response.getOutputStream(), UserEntity.class).sheet("模版1").doWrite(getData());
+        EasyExcel.write(response.getOutputStream(), getMaterialInfoByCityOrHospitalBean.class).sheet("模版1").doWrite(getMatInfo());
+        //EasyExcel.write(filename, MatBean.class).sheet("学生列表").doWrite(getMatInfo());
+    }
 }
